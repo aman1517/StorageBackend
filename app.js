@@ -7,7 +7,8 @@ import checkAuth from './Middleware/auth.js'
 import cors from 'cors'
 import { connectDb } from './config/db.js'
  const MySerceatKey="this_is_My_SecretKey"
-
+import dotenv from "dotenv";
+dotenv.config();
 const port=4000
 
  try{
@@ -19,6 +20,10 @@ app.use(cors({
     origin:'http://localhost:5173',
     credentials: true,
 }))
+app.get("/err",(req,res)=>{
+console.log(aman)
+res.json({mgs:"Hloo"})
+})
 app.get("/",(req,res)=>{
     res.json({mgs:"HI from Stroage app"})
 })
